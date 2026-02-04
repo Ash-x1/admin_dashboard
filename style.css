@@ -8,14 +8,6 @@
     --transition: all 0.3s ease;
 }
 
-/* Dark Mode Overrides */
-body.dark-mode {
-    --bg-color: #1e293b;
-    --card-bg: #334155;
-    --text-main: #f8fafc;
-    --text-sub: #cbd5e1;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -34,66 +26,93 @@ body {
     min-height: 100vh;
 }
 
-/* Sidebar Styling */
+/* SIDEBAR */
 .sidebar {
     background-color: var(--primary-color);
-    color: var(--sidebar-text);
+    color: white;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 40px; 
+    gap: 40px;
 }
 
 .sidebar ul {
     list-style: none;
 }
 
-.sidebar li {
-    padding: 12px 0;
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-decoration: none;
     font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
 }
 
-.sidebar li:hover {
-    transform: translateX(10px);
-    opacity: 0.8;
+.sidebar img {
+    width: 22px;
+    height: 22px;
+    filter: invert(1);
 }
 
-/* Main Content Area */
-.main-content {
-    display: flex;
-    flex-direction: column;
-}
-
+/* HEADER */
 .header {
-    background-color: var(--card-bg);
+    background: var(--card-bg);
     padding: 20px 40px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 10;
 }
 
-.header-top, .header-bottom {
+.header-top,
+.header-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.header-top { margin-bottom: 25px; }
 
 .search-bar input {
     width: 500px;
     padding: 8px 20px;
     border-radius: 20px;
     border: none;
-    background-color: var(--bg-color);
+    background: var(--bg-color);
 }
 
-.user-actions, .welcome-user {
+.user-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+/* PROFILE IMAGES */
+.profile-pic-small,
+.profile-pic-large {
+    background-image: url("man.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.profile-pic-small {
+    width: 40px;
+    height: 40px;
+}
+
+.profile-pic-large {
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--primary-color);
 }
 
 .btn {
@@ -104,13 +123,9 @@ body {
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 10px;
-    transition: var(--transition);
 }
 
-.btn:hover { background-color: #1474a5; }
-
-/* Grid Layout for Cards */
+/* GRID */
 .content-grid {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -122,22 +137,14 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
-    margin-top: 20px;
 }
 
 .project-card {
-    background-color: var(--card-bg);
+    background: var(--card-bg);
     padding: 30px;
-    border-radius: 10px;
     border-left: 8px solid orange;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: var(--transition);
+    border-radius: 10px;
 }
-
-.project-card:hover { transform: translateY(-5px); }
 
 .card-icons {
     display: flex;
@@ -146,35 +153,43 @@ body {
     margin-top: 20px;
 }
 
-/* Side Cards */
-.card {
-    background-color: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+.card-icons img {
+    width: 22px;
+    cursor: pointer;
+    opacity: 0.7;
 }
 
+.card-icons img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* SIDE CARDS */
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* TRENDING */
 .trending-item {
     display: flex;
-    align-items: center;
     gap: 15px;
     margin-bottom: 15px;
 }
 
-/* Placeholders for Assets */
-.profile-pic-small, .profile-pic-large, .mini-pic {
-    background-color: #ddd;
+.mini-pic {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    /* CALL YOUR PROFILE IMAGES HERE IN CSS OR HTML */
+    background-image: url("boy.png");
+    background-size: cover;
+    background-position: center;
 }
 
-.profile-pic-small { width: 40px; height: 40px; }
-.profile-pic-large { width: 70px; height: 70px; }
-.mini-pic { width: 50px; height: 50px; }
-
-.logo::before {
-    content: "■"; /* PLACEHOLDER FOR LOGO SVG/IMAGE */
-    font-size: 2rem;
-    margin-right: 10px;
+/* FOOTER */
+.attribution {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
 }
