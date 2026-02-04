@@ -2,10 +2,10 @@
     --primary-color: #1992d4;
     --bg-color: #e2e8f0;
     --card-bg: #ffffff;
-    --text-main: #000000;
-    --text-sub: #4b5563;
+    --text-main: #111827;
+    --text-sub: #6b7280;
     --sidebar-text: #ffffff;
-    --transition: all 0.3s ease;
+    --transition: all 0.25s ease;
 }
 
 * {
@@ -26,28 +26,44 @@ body {
     min-height: 100vh;
 }
 
-/* SIDEBAR */
+/* ================= SIDEBAR ================= */
 .sidebar {
     background-color: var(--primary-color);
     color: white;
-    padding: 20px;
+    padding: 28px 22px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 50px;
+}
+
+.logo h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
 .sidebar ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .sidebar a {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
+    padding: 10px 12px;
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.sidebar a:hover {
+    background-color: rgba(255,255,255,0.15);
 }
 
 .sidebar img {
@@ -56,11 +72,16 @@ body {
     filter: invert(1);
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
     background: var(--card-bg);
-    padding: 20px 40px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 18px 40px 24px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    z-index: 5;
+}
+
+.header-top {
+    margin-bottom: 22px;
 }
 
 .header-top,
@@ -71,17 +92,18 @@ body {
 }
 
 .search-bar input {
-    width: 500px;
-    padding: 8px 20px;
-    border-radius: 20px;
+    width: 520px;
+    padding: 10px 22px;
+    border-radius: 999px;
     border: none;
     background: var(--bg-color);
+    font-size: 0.95rem;
 }
 
 .user-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 }
 
 .icon-btn {
@@ -95,7 +117,7 @@ body {
     height: 24px;
 }
 
-/* PROFILE IMAGES */
+/* ================= PROFILE IMAGES ================= */
 .profile-pic-small,
 .profile-pic-large {
     background-image: url("assets/man.png");
@@ -105,91 +127,163 @@ body {
 }
 
 .profile-pic-small {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 }
 
 .profile-pic-large {
-    width: 70px;
-    height: 70px;
-    border: 3px solid var(--primary-color);
+    width: 72px;
+    height: 72px;
+    border: 4px solid #facc15; 
 }
 
+.welcome-text p {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+}
+
+.welcome-text h1 {
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+/* ================= BUTTONS ================= */
 .btn {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
-    font-weight: bold;
+    padding: 10px 26px;
+    border-radius: 999px;
+    font-weight: 700;
     cursor: pointer;
+    transition: var(--transition);
 }
 
-/* GRID */
+.btn:hover {
+    background-color: #157bb3;
+}
+
+/* ================= GRID ================= */
 .content-grid {
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 25px;
-    padding: 30px;
+    gap: 30px;
+    padding: 32px;
 }
 
+.projects h3,
+.announcements h3,
+.trending h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+/* ================= PROJECT CARDS ================= */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
 }
 
 .project-card {
     background: var(--card-bg);
-    padding: 30px;
-    border-left: 8px solid orange;
-    border-radius: 10px;
+    padding: 26px 26px 22px;
+    border-left: 8px solid #facc15;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: var(--text-sub);
+    line-height: 1.4;
 }
 
 .card-icons {
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 18px;
+    margin-top: 18px;
 }
 
 .card-icons img {
     width: 22px;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.65;
+    transition: var(--transition);
 }
 
 .card-icons img:hover {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
-/* SIDE CARDS */
+/* ================= SIDE CARDS ================= */
 .card {
     background: var(--card-bg);
-    padding: 20px;
-    border-radius: 10px;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
-/* TRENDING */
+.announcements .item:not(:last-child) {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.announcements h5 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.announcements p {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+}
+
+/* ================= TRENDING ================= */
 .trending-item {
     display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.trending-item p {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.trending-item small {
+    font-size: 0.8rem;
+    color: var(--text-sub);
 }
 
 .mini-pic {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background-image: url("assets/boy.png");
     background-size: cover;
     background-position: center;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .attribution {
     text-align: center;
-    padding: 20px;
-    font-size: 0.85rem;
+    padding: 18px;
+    font-size: 0.8rem;
+    color: var(--text-sub);
 }
